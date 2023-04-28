@@ -1,0 +1,27 @@
+<div class="container">
+    <h1>Produtos</h1>
+    <p>Inserir produtos</p>
+    <form method="post" action="http://localhost:3000/produto-salvar">
+        <div class="form-group">
+        <label for="name">Nome:</label>
+        <input type="text" class="form" id="name" name="name">
+        </div>
+        <div class="form-group">
+            <label for="category">Categoria:</label>
+            <select name="category" id="categoria">
+                <% for(category of Categories){%>
+                <option value="<%=category.value  %>"><%=category.value  %></option>
+                <% } %>
+            </select>
+        </div>
+        <div class="form-group">
+        <label for="description">Descrição: </label>
+        <input type="text" class="form" id="description" name="description">
+        </div>
+        <div class="form-group">
+        <label for="price">Preço: </label>
+        <input type="number" class="form" id="price" name="price">
+        </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

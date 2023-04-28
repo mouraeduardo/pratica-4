@@ -1,0 +1,27 @@
+<div class="container">
+    <h1>Produtos</h1>
+    <p>Inserir produtos</p>
+    <form action="/produto-editar/<%=product.id  %>" method="post">
+        <div class="form-group">
+        <label for="name">Nome:</label>
+        <input type="text" class="form" name="name" value="<%=product.name  %>">
+        </div>
+        <div class="form-group">
+            <label for="category">Categoria:</label>
+            <select name="category" id="categoria">
+                <% for(category of Categories){%>
+                <option value="<%=category.value  %>"><%=category.value  %></option>
+                <% } %>
+            </select>
+        </div>
+        <div class="form-group">
+        <label for="description" value="teste" >Descrição: </label>
+        <input type="text" class="form" name="description" value="<%=product.description  %>">
+        </div>
+        <div class="form-group">
+        <label for="price">Preço: </label>
+        <input type="number" class="form" name="price" value="<%=product.price  %>">
+        </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

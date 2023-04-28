@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Produto</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Produtos</h2>
+        <p>produtos</p>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Categoria</th>
+              <th>Descrição</th>
+              <th>preço</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(product of Products){%>
+            <tr>
+              <td><%=product.id%></td>
+              <td><%=product.name%></td>
+              <td><%=product.category%></td>
+              <td><%=product.description %></td>
+              <td><%=product.price %></td>
+              <td><a href="http://localhost:3000/produto-editar?id=<%=product.id%>">editar</a></td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+        <button><a href="http://localhost:3000/produto-salvar">Cadastrar produto</a></button>
+    </div>
+
+</body>
+</html>

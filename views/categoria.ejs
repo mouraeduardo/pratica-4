@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Categorias</title>
+</head>
+<body>
+    <div class="container">
+      <h1>Categorias</h1>
+        <p>Inserir categoria</p>
+        <form method="post" action="/categoria-salvar">
+            <div class="form-group">
+            <label for="name" >Chave:</label>
+            <input type="text" class="form" id="chave" name="chave">
+            </div>
+            <div class="form-group">
+            <label for="description">valor: </label>
+            <input type="text" class="form" id="value" name="value">
+            </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        
+        <h2>Categorias</h2>
+        <p>categoria</p>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>chave</th>
+              <th>valor</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(category of Categories){%>
+            <tr>
+                <td><%=category.chave %></td>
+                <td><%=category.value %></td>
+                <td><a href="http://localhost:3000/categoria-deletar/<%=category.chave %>">Delete</a></td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+</body>
+</html>
